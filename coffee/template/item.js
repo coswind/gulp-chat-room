@@ -1,0 +1,1 @@
+module.exports = '<div class=\'item\'>\n    <div class=\'main\'>\n        <div class=\'main-content\'>\n            {{=it.text}}\n        </div>\n    </div>\n    <div class=\'sub\'>\n        {{=it.name}}\n    </div>\n    <div class=\'extra\'>\n        {{=it.stamp}}\n    </div>\n</div>\n';

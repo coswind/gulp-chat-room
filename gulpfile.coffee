@@ -1,11 +1,13 @@
 gulp = require 'gulp'
 jade = require 'gulp-jade'
 rename = require 'gulp-rename'
+nodemon = require 'gulp-nodemon'
+fileToJs = require 'gulp-file-to-js'
 livereload = require 'gulp-livereload'
 browserify = require 'gulp-browserify'
 
 gulp.task 'coffee', ->
-    gulp.src 'coffee/*.coffee', { read: false }
+    gulp.src 'coffee/load.coffee', { read: false }
         .pipe(browserify {
             transform: ['coffeeify'],
             extensions: ['.coffee']
@@ -20,12 +22,25 @@ gulp.task 'jade', ->
             })
         .pipe(gulp.dest 'dist/')
 
+gulp.task 'template', ->
+    gulp.src 'template/*.html'
+        .pipe fileToJs()
+        .pipe(gulp.dest 'coffee/template')
+
+gulp.task 'socket', ->
+    nodemon({
+        script: 'socket/socket.coffee',
+        ext: '',
+        ignore: ['*']
+    })
+
 gulp.task 'watch', ->
     server = livereload()
     gulp.watch ['coffee/*.coffee'], ['coffee']
     gulp.watch ['jade/*.jade'], ['jade']
-    gulp.watch ['dist/**'], (file) ->
+    gulp.watch ['template/*.html'], ['template']
+    gulp.watch ['dist/*.html', 'dist/js/*.js'], (file) ->
         server.changed file.path
 
-gulp.task 'default', ['watch']
+gulp.task 'default', ['template', 'socket', 'watch']
 
