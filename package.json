@@ -33,6 +33,7 @@
     "socket.io-client": "~0.9.16",
     "gulp-nodemon": "~1.0.2",
     "gulp-file-to-js": "0.0.2",
-    "dot": "~1.0.2"
+    "dot": "~1.0.2",
+    "dateformat": "^1.0.7-1.2.3"
   }
 }

@@ -1,14 +1,20 @@
 $ = require 'jquery'
 doT = require 'dot'
 {ws} = require './ws'
+dateformat = require 'dateformat'
 
 name = 'anonymous'
+new_time = ->
+	now = new Date()
+	dateformat now, 'h:MM:ss TT'
 
 # dom init
-$input = $('#input')
+$name = $('#name')
 $list = $('#list')
+$input = $('#input')
 
-# focus
+# init
+$name.val name
 $input.focus()
 
 # monitor
@@ -17,11 +23,13 @@ monitor = (event) ->
         ws.emit 'post', {
             name: name,
             text: $input.val(),
-            stamp: +new Date
+            stamp: new_time()
         }
         $input.val('')
 
 $input.on 'keyup', monitor
+$name.on 'blur', ->
+    name = $name.val()
 
 # dom update
 itemFn = doT.template require('./template/item')

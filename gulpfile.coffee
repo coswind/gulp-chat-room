@@ -31,7 +31,7 @@ gulp.task 'socket', ->
     nodemon({
         script: 'socket/socket.coffee',
         ext: '',
-        ignore: ['*']
+        ignore: ['']
     })
 
 gulp.task 'watch', ->
