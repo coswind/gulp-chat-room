@@ -33,6 +33,15 @@ input {
 .item {
     border-bottom: 1px solid rgb(175, 174, 174);
     overflow: hidden;
+    padding: 6px 0px;
+}
+
+.item:first-child {
+    border-top: 1px solid rgb(175, 174, 174);
+}
+
+.item:hover {
+    background: rgb(247, 247, 247);
 }
 
 #list-contanter {
@@ -46,7 +55,8 @@ input {
 }
 
 .main-content {
-    margin: 0px 200px 0px 150px;
+    margin: 0px 120px 0px 150px;
+    word-break: break-all;
 }
 
 .sub {
@@ -58,7 +68,7 @@ input {
 
 .extra {
     float: left;
-    width: 200px;
-    margin-left: -200px;
+    width: 120px;
+    margin-left: -120px;
     text-align: right;
 }
