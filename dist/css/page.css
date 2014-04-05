@@ -1,5 +1,11 @@
 * {}
-html{height:100%;}
+
+html {height:100%;}
+
+em {
+    font-style: normal;
+}
+
 body {
     padding: 0;
     margin: 0px;
@@ -57,6 +63,10 @@ input {
 .main-content {
     margin: 0px 120px 0px 150px;
     word-break: break-all;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 10px 20px 10px;
 }
 
 .sub {
@@ -71,4 +81,26 @@ input {
     width: 120px;
     margin-left: -120px;
     text-align: right;
+}
+
+.arrow {
+    position: absolute;
+    margin-top: -14px;
+    margin-left: -27px;
+    -webkit-user-select: none;
+}
+
+.arrow * {
+    display: block;
+    font-size: 20px;
+}
+
+.arrow_line {
+    color: #d9d9d9;
+}
+
+.arrow_background {
+    color: #f2f2f2;
+    margin-top: -27px;
+    margin-left: 1px;
 }

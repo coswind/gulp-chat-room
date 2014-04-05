@@ -64,7 +64,7 @@ ws.on('post', update);
 
 
 },{"./template/item":3,"./ws":4,"dateformat":5,"dot":7,"jquery":9}],3:[function(require,module,exports){
-module.exports = '<div class=\'item\'>\n    <div class=\'main\'>\n        <div class=\'main-content\'>\n            {{=it.text}}\n        </div>\n    </div>\n    <div class=\'sub\'>\n        {{=it.name}}\n    </div>\n    <div class=\'extra\'>\n        {{=it.stamp}}\n    </div>\n</div>\n';
+module.exports = '<div class=\'item\'>\n    <div class=\'main\'>\n        <div class=\'main-content\'>\n            <div class=\'arrow\'>\n                <em class=\'arrow_line\'>◆</em>\n                <span class=\'arrow_background\'>◆</span>\n            </div>\n            <div class=\'text\'>\n                {{=it.text}}\n            </div>\n        </div>\n    </div>\n    <div class=\'sub\'>\n        {{=it.name}}\n    </div>\n    <div class=\'extra\'>\n        {{=it.stamp}}\n    </div>\n</div>\n';
 },{}],4:[function(require,module,exports){
 var io, ws;
 
