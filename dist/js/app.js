@@ -57,7 +57,8 @@ $name.on('blur', function() {
 itemFn = doT.template(require('./template/item'));
 
 update = function(data) {
-  return $list.append(itemFn(data));
+  $list.append(itemFn(data));
+  return document.getElementById('list-container').scrollTop = 999999999;
 };
 
 ws.on('post', update);
