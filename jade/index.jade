@@ -5,7 +5,10 @@ head
     script(defer, src='js/app.js', charset='utf-8')
     link(rel='stylesheet', href='css/page.css')
 body
-    input#name(placeholder='your name')
-    #list-container
-        #list
-    input#input
+    .table
+        .top-bar
+            input#name(placeholder='your name')
+        .content
+            #list
+        .bottom-bar
+            input#input
