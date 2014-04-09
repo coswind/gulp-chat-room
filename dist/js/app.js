@@ -58,7 +58,7 @@ itemFn = doT.template(require('./template/item'));
 
 update = function(data) {
   $list.append(itemFn(data));
-  return document.getElementById('list').scrollTop = 999999999;
+  return document.getElementById('list-content').scrollTop = 999999999;
 };
 
 ws.on('post', update);

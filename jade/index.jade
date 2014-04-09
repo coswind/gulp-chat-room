@@ -7,8 +7,12 @@ head
 body
     .table
         .top-bar
-            input#name(placeholder='your name')
+            .top-bar-content
+                span#name-span YOUR NAME:
+                input#name(placeholder='your name')
         .content
-            #list
+            #list-content
+                #list
         .bottom-bar
-            input#input
+            .bottom-bar-content
+                input#input

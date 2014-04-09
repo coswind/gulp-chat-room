@@ -35,7 +35,7 @@ $name.on 'blur', ->
 itemFn = doT.template require('./template/item')
 update = (data) ->
     $list.append itemFn(data)
-    document.getElementById('list').scrollTop = 999999999
+    document.getElementById('list-content').scrollTop = 999999999
 
 # ws
 ws.on 'post', update

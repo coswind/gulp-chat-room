@@ -21,38 +21,77 @@ body {
 }
 
 .top-bar {
+    background-color: #e5e5e5;
     display: table-row;
-    height: 25px;
+    height: 0px;
+}
+
+.top-bar-content {
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .content {
     display: table-row;
+    height: 100%;
 }
 
 .bottom-bar {
     display: table-row;
-    height: 30px;
+    height: 0px;
 }
+
+.bottom-bar-content {}
 
 input {
     font-family: monaco;
 }
 
+#name-span {
+}
+
 #name {
-    height: 25px;
+    height: 38px;
     border: none;
-    box-shadow: 0px -1px 4px rgb(122, 118, 118);
+    padding-left: 8px;
+}
+
+#name:focus {
+    outline: none;
 }
 
 #list {
-    overflow: auto;
-    height: 100%;
+}
+
+#list-content {
+    overflow: auto; height: 100%;
+}
+
+#list-content:after {
+    -webkit-transition: opacity ease .418s, visibility ease .418s;     transition: opacity ease .418s, visibility ease .418s;     
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .1);     
+    content: "";     
+    height: 0;     
+    left: -8px;          
+    opacity: 1;     position: absolute;     
+    right: -8px;     
+    top: 39px;
+}
+
+#list:after {
+    -webkit-transition: opacity ease .418s, visibility ease .418s;     transition: opacity ease .418s, visibility ease .418s;     
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .1);     content: "";     
+    height: 0;     
+    left: -8px;          
+    opacity: 1;     position: absolute;     
+    right: -8px;     
+    top: -1px;
 }
 
 #input {
     width: 100%;
     border: none;
-    height: 30px;
+    padding-left: 8px;
+    height: 40px;
     box-shadow: 0px -2px 4px rgb(122, 118, 118);
 }
 
