@@ -1,6 +1,7 @@
 $ = require 'jquery'
 doT = require 'dot'
 {ws} = require './ws'
+moment = require 'moment'
 dateformat = require 'dateformat'
 
 name = 'anonymous'
@@ -23,7 +24,8 @@ monitor = (event) ->
         ws.emit 'post', {
             name: name,
             text: $input.val(),
-            stamp: new_time()
+            time: +new Date,
+            stamp: moment().fromNow()
         }
         $input.val('')
 
@@ -36,6 +38,8 @@ itemFn = doT.template require('./template/item')
 update = (data) ->
     $list.append itemFn(data)
     document.getElementById('list-content').scrollTop = 999999999
+    $('.extra').each (index, item) ->
+        $(item).text moment($(item).data('time')).fromNow()
 
 # ws
 ws.on 'post', update

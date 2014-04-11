@@ -23,11 +23,13 @@ body {
 .top-bar {
     background-color: #e5e5e5;
     display: table-row;
-    height: 0px;
+    height: 0px; 
 }
 
 .top-bar-content {
     border-bottom: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,.1); 
+    -webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.1);
 }
 
 .top-bar-content:after {
@@ -78,7 +80,7 @@ input {
 
 #list-content:after {
     -webkit-transition: opacity ease .418s, visibility ease .418s;     transition: opacity ease .418s, visibility ease .418s;     
-    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .1);     
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, .1);     
     content: "";     
     height: 0;     
     left: -8px;          
@@ -116,7 +118,7 @@ input {
 
 .main-content {
     position: relative;
-    margin: 0px 120px 0px 150px;
+    margin: 0px 200px 0px 150px;
     word-break: break-all;
     border: 1px solid #d9d9d9;
     border-radius: 3px;
@@ -133,9 +135,11 @@ input {
 
 .extra {
     float: left;
-    width: 120px;
-    margin-left: -120px;
-    text-align: right;
+    width: 200px;
+    margin-left: -200px;
+    word-break: break-all;
+    box-sizing: border-box;
+    padding: 0px 6px;
 }
 
 .arrow {
